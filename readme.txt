@@ -64,10 +64,10 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 3.9.1.1 =
-* improvements to how wp-activate.php and robots.txt are handled on a private site.
+= 4.0 =
+* improvements to how robots.txt are handled
 
 
 == Upgrade Notice ==
-= 3.9.1.1 =
-* improvements to how wp-activate.php and robots.txt are handled on a private site.
+= 4.0 =
+* improvements to how robots.txt are handled
