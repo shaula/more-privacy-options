@@ -3,7 +3,7 @@ Contributors: dsader
 Donate link: http://dsader.snowotherway.org
 Tags: visibility, privacy, private blog, multisite, members only, network visibility, site visibility
 Requires at least: 3.7.1
-Tested up to: 4.2
+Tested up to: 4.2.4
 Stable tag: Trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
