@@ -94,6 +94,11 @@ class ds_more_privacy_options {
 		var $l10n_prefix;
 
 	function ds_more_privacy_options() {
+		// keep backwards compatibility (pre-PHP5)
+		$this->__construct();
+	}
+
+	function __construct() {
 		global  $current_blog;
 		
 		if ( ! is_multisite() ) {
@@ -347,11 +352,11 @@ class ds_more_privacy_options {
 		//December 2012 tested with "Free RSS" for iPhone. Google Reader does not authenticate locked feeds. Tough to find a free reader that does authenticate.
 		global $current_blog, $blog_id;
 			$credentials = array();
-        	$credentials['user_login'] = $_SERVER['PHP_AUTH_USER'];
-        	$credentials['user_password'] = $_SERVER['PHP_AUTH_PW'];
+        	$credentials['user_login'] = isset( $_SERVER['PHP_AUTH_USER'] ) ? $_SERVER['PHP_AUTH_USER'] : null;
+        	$credentials['user_password'] = isset( $_SERVER['PHP_AUTH_PW'] ) ? $_SERVER['PHP_AUTH_PW'] : null;
 			$credentials['remember'] = true;
 			$user = wp_signon( $credentials, false ); //if this creates WP_User, the next 3 lines are redundant
-			$user_id = get_user_id_from_string( $user->user_login );
+			$user_id = !is_wp_error( $user ) ? get_user_id_from_string( $user->user_login ) : null;
 
 			if ( is_wp_error( $user ) ||
 				// "Members Only"
